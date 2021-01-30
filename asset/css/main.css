@@ -1,0 +1,128 @@
+/* BODY */
+body {
+  background-color: #2f3542;
+  color: #f0f8ff;
+}
+
+h1 {
+  text-align: center;
+  font-size: 4em;
+}
+
+/* SECTION */
+section {
+  max-width: 420px;
+  margin: 0 auto;
+}
+
+/* TODO LIST */
+#todo-list {
+  max-height: 380px;
+  overflow-y: auto;
+}
+
+/* TODO INPUT */
+.todo-interface {
+  display: flex;
+}
+
+#todo-input {
+  height: 32px;
+  background: none;
+  border: none;
+  color: #f0f8ff;
+  padding: 20px 0;
+  font-size: 1.3rem;
+  flex: 1;
+  margin-right: 10px;
+}
+
+#todo-removeAll {
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+  height: 40px;
+  color: #920000;
+  cursor: pointer;
+}
+
+#todo-removeAll:hover {
+  color: #ff0000;
+}
+
+/* TODO TEXT */
+
+.todo-text {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.todo-checkbox {
+  width: 24px;
+  height: 24px;
+  margin-right: 10px;
+
+  border: #a9a9a9 solid 2px;
+  border-radius: 50%;
+  box-sizing: border-box;
+}
+
+.todo-checkbox:hover {
+  background-color: #96a7ce;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+
+.todo-checkbox.checked {
+  background-image: url('../svg/iconmonstr-check-mark-1.svg');
+  background-size: 12px;
+  background-color: #f0f8ff;
+  background-position: center;
+  background-repeat: no-repeat;
+  opacity: 0.4;
+}
+
+.todo-text p {
+  overflow: hidden;
+  max-width: 300px;
+  width: 100%;
+  text-overflow: ellipsis;
+}
+
+.del-btn {
+  width: 12px;
+  height: 12px;
+  background-image: url('../svg/trash.svg');
+  background-size: 12px;
+  background-position: center;
+  background-repeat: no-repeat;
+  margin: 10px;
+  opacity: 0.4;
+}
+
+.strket-text {
+  text-decoration: line-through;
+}
+
+/* SCROLL-BAR */
+#todo-list::-webkit-scrollbar {
+  width: 10px;
+}
+
+#todo-list::-webkit-scrollbar-thumb {
+  background-color: #2f3542;
+  border-radius: 10px;
+  background-clip: padding-box;
+  border: 2px solid transparent;
+}
+#todo-list::-webkit-scrollbar-track {
+  background-color: grey;
+  border-radius: 10px;
+  box-shadow: inset 0px 0px 5px white;
+}
+
+#todo-count p {
+  text-align: right;
+  font-size: 1.5rem;
+}
