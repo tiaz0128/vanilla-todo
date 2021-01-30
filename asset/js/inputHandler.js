@@ -8,6 +8,8 @@ function inputHandler(e) {
     })
 
     this.todoData = [...this.todoData, ...temp]
+    localStorage.setItem('todoData', JSON.stringify(this.todoData))
+
     inputDOM.value = null
 
     todoList.setState(this.todoData)

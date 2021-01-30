@@ -8,6 +8,7 @@ function listHandler(e) {
       this.todoData = this.todoData.map(({ text, isCompleted }, idx) => {
         return idx === targetIdx ? { text, isCompleted: !isCompleted } : { text, isCompleted }
       })
+      localStorage.setItem('todoData', JSON.stringify(this.todoData))
 
       todoList.setState(this.todoData)
       break
@@ -16,6 +17,8 @@ function listHandler(e) {
       this.todoData = this.todoData.filter((todo, idx) => {
         return idx !== targetIdx
       })
+      localStorage.setItem('todoData', JSON.stringify(this.todoData))
+
       todoList.setState(this.todoData)
       todoCount.setState(this.todoData)
       break

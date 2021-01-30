@@ -15,7 +15,7 @@ function renderTodo({ text, isCompleted }, idx) {
 function TodoList({ todoData, parentDOM, listHandler }) {
   // new 호출된 여부 확인
   if (isNew(new.target)) {
-    validateData(todoData)
+    if (todoData.length !== 0) validateData(todoData)
     checkDom(parentDOM)
     parentDOM.addEventListener('click', listHandler)
   }
@@ -35,6 +35,8 @@ function TodoList({ todoData, parentDOM, listHandler }) {
   this.setState = (nextData) => {
     // 데이터만 변경되므로 new 호출여부는 미검사
     todoData = validateData(nextData)
+    localStorage.setItem('todoData', JSON.stringify(todoData))
+
     this.render()
   }
 
