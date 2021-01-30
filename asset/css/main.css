@@ -24,6 +24,7 @@ section {
 /* TODO INPUT */
 .todo-interface {
   display: flex;
+  align-items: center;
 }
 
 #todo-input {
@@ -75,7 +76,7 @@ section {
 }
 
 .todo-checkbox.checked {
-  background-image: url('../svg/iconmonstr-check-mark-1.svg');
+  background-image: url('../svg/checkmark.svg');
   background-size: 12px;
   background-color: #f0f8ff;
   background-position: center;
@@ -88,6 +89,7 @@ section {
   max-width: 300px;
   width: 100%;
   text-overflow: ellipsis;
+  white-space: nowrap;
 }
 
 .del-btn {

@@ -8,7 +8,7 @@ import TodoCount from './TodoCount.js'
 import TodoRemoveAll from './TodoRemoveAll.js'
 
 function TodoApp(todoData, parentDOM, inputDOM, countDOM, removeAllBtnDOM) {
-  this.todoData = todoData
+  this.todoData = todoData ? todoData : []
 
   this.parentDOM = parentDOM
   this.inputDOM = inputDOM
