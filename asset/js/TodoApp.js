@@ -1,16 +1,21 @@
-import inputHandler from './inputHandler.js'
-import listHandler from './listHandler.js'
-import removeAllHandler from './removeAllHandler.js'
+import inputHandler from './handler/inputHandler.js'
+import listHandler from './handler/listHandler.js'
+import removeAllHandler from './handler/removeAllHandler.js'
 
-import TodoList from './TodList.js'
-import TodoInput from './TodoInput.js'
-import TodoCount from './TodoCount.js'
-import TodoRemoveAll from './TodoRemoveAll.js'
+import TodoList from './components/TodList.js'
+import TodoInput from './components/TodoInput.js'
+import TodoCount from './components/TodoCount.js'
+import TodoRemoveAll from './components/TodoRemoveAll.js'
 
-function TodoApp(todoData, parentDOM, inputDOM, countDOM, removeAllBtnDOM) {
-  this.todoData = todoData ? todoData : []
+/**
+ *
+ * @param {{todo: string, iscomplete: boolean}[]} todoData
+ * @param {{[key: string]: HTMLElement}} targetDoms
+ */
+function TodoApp(todoData, { todoListParentDom, inputDOM, countDOM, removeAllBtnDOM }) {
+  this.todoData = todoData || []
 
-  this.parentDOM = parentDOM
+  this.todoListParentDom = todoListParentDom
   this.inputDOM = inputDOM
   this.countDOM = countDOM
   this.removeAllBtnDOM = removeAllBtnDOM
@@ -24,10 +29,10 @@ function TodoApp(todoData, parentDOM, inputDOM, countDOM, removeAllBtnDOM) {
   this.todoCount = new TodoCount(this)
   this.todoRemoveAll = new TodoRemoveAll(this)
 
-  // this.render = () => {
-  //   this.todoList.setState(this.todoData)
-  //   this.todoCount.setState(this.todoData)
-  // }
+  this.render = () => {
+    this.todoList.setState(this.todoData)
+    this.todoCount.setState(this.todoData)
+  }
 }
 
 export default TodoApp

@@ -14,7 +14,6 @@ function inputHandler(e) {
 
     todoList.setState(this.todoData)
     todoCount.setState(this.todoData)
-    //render()
   }
 }
 

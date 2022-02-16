@@ -1,4 +1,4 @@
-import validateData, { isNew, checkDom } from './validateData.js'
+import validateData, { isNew, checkDom } from '../utils/validateData.js'
 
 function renderTodo({ text, isCompleted }, idx) {
   return `<div class="todo-text" data-idx=${idx}>
@@ -10,14 +10,14 @@ function renderTodo({ text, isCompleted }, idx) {
 /**
  * todoList 의 fucntion contructor
  * @param {array} todoData 배열로 내부에는 {string text, boolean isCompleted} 프로퍼티로 구성된 오브젝트가 존재
- * @param {string} parentDOM todoList 의 대상 부모 DOM객체
+ * @param {string} todoListParentDom todoList 의 대상 부모 DOM객체
  */
-function TodoList({ todoData, parentDOM, listHandler }) {
+function TodoList({ todoData, todoListParentDom, listHandler }) {
   // new 호출된 여부 확인
   if (isNew(new.target)) {
     if (todoData.length !== 0) validateData(todoData)
-    checkDom(parentDOM)
-    parentDOM.addEventListener('click', listHandler)
+    checkDom(todoListParentDom)
+    todoListParentDom.addEventListener('click', listHandler)
   }
 
   /**
@@ -25,7 +25,7 @@ function TodoList({ todoData, parentDOM, listHandler }) {
    */
   this.render = () => {
     // validateData(todoData)
-    parentDOM.innerHTML = todoData.map(renderTodo).join('')
+    todoListParentDom.innerHTML = todoData.map(renderTodo).join('')
   }
 
   /**

@@ -1,4 +1,4 @@
-import { ERROR_MSG } from './ERROR_MSG.js'
+import { ERROR_MSG } from '../constants/ERROR_MSG.js'
 
 /**
  * 데이터의 유효성을 검사하는 함수
