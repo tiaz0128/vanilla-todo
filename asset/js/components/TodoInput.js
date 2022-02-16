@@ -1,16 +1,10 @@
 import { isNew, checkDom } from '../utils/validateData.js'
 
-function TodoInput({ inputDOM, todoListParentDom, inputHandler }) {
+function TodoInput({ inputDOM, todoListParentDom, onKeyUpInput }) {
   if (isNew(new.target)) {
     checkDom(todoListParentDom)
-    inputDOM.addEventListener('keyup', inputHandler)
+    inputDOM.addEventListener('keyup', onKeyUpInput)
   }
-
-  // this.render = () => {
-  //   todoListParentDom.appendChild()
-  // }
-
-  // this.render()
 }
 
 export default TodoInput

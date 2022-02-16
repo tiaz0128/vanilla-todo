@@ -1,10 +1,10 @@
-import { isNew } from '../utils/validateData.js'
+import validateData, { isNew } from '../utils/validateData.js'
 
-function TodoCount({ todoData, countDOM }) {
-  if (isNew(new.target)) this.todoData = todoData
+function TodoCount({ initData, countDOM }) {
+  if (isNew(new.target)) this.todoData = validateData(initData)
 
-  this.setState = (todoData) => {
-    this.todoData = todoData
+  this.setState = (nextState) => {
+    this.todoData = nextState
     this.render()
   }
 

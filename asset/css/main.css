@@ -41,9 +41,6 @@ section {
 }
 
 #todo-removeAll {
-  display: flex;
-  align-items: center;
-  height: 38px;
   color: #920000;
   cursor: pointer;
 }
@@ -86,6 +83,12 @@ section {
   opacity: 0.4;
 }
 
+.todo-checkbox.checked:hover {
+  background-color: #96a7ce;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+
 .todo-text p {
   overflow: hidden;
   max-width: 300px;
@@ -116,13 +119,13 @@ section {
 }
 
 #todo-list::-webkit-scrollbar-thumb {
-  background-color: #2f3542;
+  background-color: gray;
   border-radius: 10px;
   background-clip: padding-box;
   border: 2px solid transparent;
 }
 #todo-list::-webkit-scrollbar-track {
-  background-color: grey;
+  background-color: #2f3542;
   border-radius: 10px;
   box-shadow: inset 0px 0px 5px white;
 }
